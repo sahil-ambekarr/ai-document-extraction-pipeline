@@ -1,0 +1,10 @@
+{
+  "sources": {
+    "text": "ollama/llama3.2, text mode, recorded 2026-11-17 by scripts/eval.py"
+  },
+  "by_mode": {
+    "text": [
+      "{\n  \"document_type\": \"invoice\",\n  \"vendor_name\": \"Copperleaf Catering Services\",\n  \"buyer_name\": \"Sample Valley School District\",\n  \"number\": \"INV40871\",\n  \"issue_date\": \"2026-07-07\",\n  \"due_date\": \"2026-08-06\",\n  \"currency\": \"GBP\",\n  \"line_items\": [\n    {\"description\": \"Coffee and tea service per person\", \"quantity\": 20, \"unit_price\": 3.66, \"amount\": 73.20},\n    {\"description\": \"Ceramic capacitor kit, 300 pcs\", \"quantity\": 6, \"unit_price\": 23.93, \"amount\": 143.58}\n  ],\n  \"subtotal\": 216.78,\n  \"tax\": 43.36,\n  \"total\": 260.14\n}"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "sources": {
+    "text": "ollama/llama3.2, text mode, recorded 2026-11-17 by scripts/eval.py"
+  },
+  "by_mode": {
+    "text": [
+      "{\n  \"document_type\": \"purchase_order\",\n  \"vendor_name\": \"Driftwood Furniture Makers\",\n  \"buyer_name\": \"Fictional Harbour Clinic\",\n  \"number\": \"PO-2026-0012\",\n  \"issue_date\": \"2026-07-04\",\n  \"due_date\": null,\n  \"delivery_date\": \"2026-07-25\",\n  \"currency\": \"INR\",\n  \"line_items\": [\n    {\"description\": \"Ballpoint pens, blue, pack of 50\", \"quantity\": 6, \"unit_price\": 8.01, \"amount\": 48.06},\n    {\"description\": \"On-site installation, per hour\", \"quantity\": 4, \"unit_price\": 75.41, \"amount\": 301.64},\n    {\"description\": \"Ceramic capacitor kit, 300 pcs\", \"quantity\": 10, \"unit_price\": 27.78, \"amount\": 277.80}\n  ],\n  \"subtotal\": 627.50,\n  \"tax\": 112.95,\n  \"total\": 740.45\n}"
+    ]
+  }
+}

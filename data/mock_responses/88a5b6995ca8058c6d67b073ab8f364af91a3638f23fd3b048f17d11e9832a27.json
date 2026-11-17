@@ -1,0 +1,10 @@
+{
+  "sources": {
+    "text": "ollama/llama3.2, text mode, recorded 2026-11-17 by scripts/eval.py"
+  },
+  "by_mode": {
+    "text": [
+      "{\n  \"document_type\": \"invoice\",\n  \"vendor_name\": \"Driftwood Furniture Makers\",\n  \"buyer_name\": \"Imaginary Rail Museum Trust\",\n  \"number\": \"INV-2026-0004\",\n  \"issue_date\": \"2026-04-30\",\n  \"due_date\": \"2026-05-30\",\n  \"currency\": \"USD\",\n  \"line_items\": [\n    {\"description\": \"Coffee and tea service per person\", \"quantity\": 3, \"unit_price\": 4.47, \"amount\": 13.41},\n    {\"description\": \"Shipping cartons, 40 x 30 x 30 cm, bundle of 25\", \"quantity\": 12, \"unit_price\": 23.47, \"amount\": 281.64},\n    {\"description\": \"Whiteboard markers, assorted, pack of 12\", \"quantity\": 2, \"unit_price\": 11.57, \"amount\": 23.14},\n    {\"description\": \"Glass beakers 250 ml, set of 6\", \"quantity\": 5, \"unit_price\": 19.66, \"amount\": 98.30},\n    {\"description\": \"On-site installation, per hour\", \"quantity\": 2.5, \"unit_price\": 54.02, \"amount\": 135.05},\n    {\"description\": \"Bookshelf, 5 tiers, walnut finish\", \"quantity\": 5, \"unit_price\": 298.82, \"amount\": 1494.10}\n  ],\n  \"subtotal\": 2045.64,\n  \"tax\": 0,\n  \"total\": 2045.64\n}"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "sources": {
+    "text": "ollama/llama3.2, text mode, recorded 2026-11-17 by scripts/eval.py"
+  },
+  "by_mode": {
+    "text": [
+      "{\n  \"document_type\": \"purchase_order\",\n  \"vendor_name\": \"Nimbus Paper & Ink GmbH\",\n  \"buyer_name\": \"Example Robotics Ltd\",\n  \"number\": \"PO12960\",\n  \"issue_date\": \"2026-10-28\",\n  \"due_date\": null,\n  \"delivery_date\": \"2026-11-11\",\n  \"currency\": \"GBP\",\n  \"line_items\": [\n    {\"description\": \"On-site installation, per hour\", \"quantity\": 7.5, \"unit_price\": 62.1, \"amount\": 465.75},\n    {\"description\": \"Deep cleaning, per hour\", \"quantity\": 7.5, \"unit_price\": 32.21, \"amount\": 241.58},\n    {\"description\": \"M8 hex bolts, zinc plated, bag of 100\", \"quantity\": 4, \"unit_price\": 18.1, \"amount\": 72.4},\n    {\"description\": \"Aluminium sheet 1 mm, 1 x 2 m\", \"quantity\": 10, \"unit_price\": 52.56, \"amount\": 525.6},\n    {\"description\": \"Bookshelf, 5 tiers, walnut finish\", \"quantity\": 5, \"unit_price\": 285.41, \"amount\": 1427.05}\n  ],\n  \"subtotal\": 2732.38,\n  \"tax\": 546.48,\n  \"total\": 3278.86\n}"
+    ]
+  }
+}

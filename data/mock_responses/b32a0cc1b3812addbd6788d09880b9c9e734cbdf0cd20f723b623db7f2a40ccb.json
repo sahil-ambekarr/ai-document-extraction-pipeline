@@ -1,0 +1,10 @@
+{
+  "sources": {
+    "text": "ollama/llama3.2, text mode, recorded 2026-11-17 by scripts/eval.py"
+  },
+  "by_mode": {
+    "text": [
+      "{\n  \"document_type\": \"purchase_order\",\n  \"vendor_name\": \"Pinecone Cleaning Collective\",\n  \"buyer_name\": \"Example Robotics Ltd\",\n  \"number\": \"564/PO/26\",\n  \"issue_date\": \"2026-02-12\",\n  \"due_date\": null,\n  \"delivery_date\": \"2026-03-05\",\n  \"currency\": \"GBP\",\n  \"line_items\": [\n    {\"description\": \"Ballpoint pens, blue, pack of 50\", \"quantity\": 8, \"unit_price\": 10.87, \"amount\": 86.96},\n    {\"description\": \"Glass beakers 250 ml, set of 6\", \"quantity\": 4, \"unit_price\": 19.64, \"amount\": 78.56},\n    {\"description\": \"Lunch buffet per person\", \"quantity\": 2, \"unit_price\": 19.96, \"amount\": 39.92},\n    {\"description\": \"Microcontroller dev board\", \"quantity\": 1, \"unit_price\": 13.11, \"amount\": 13.11}\n  ],\n  \"subtotal\": 218.55,\n  \"tax\": 43.71,\n  \"total\": 262.26\n}"
+    ]
+  }
+}

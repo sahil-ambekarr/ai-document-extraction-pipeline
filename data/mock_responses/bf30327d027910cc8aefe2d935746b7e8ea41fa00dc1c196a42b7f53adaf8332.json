@@ -1,0 +1,10 @@
+{
+  "sources": {
+    "text": "ollama/llama3.2, text mode, recorded 2026-11-17 by scripts/eval.py"
+  },
+  "by_mode": {
+    "text": [
+      "{\n  \"document_type\": \"invoice\",\n  \"vendor_name\": \"Quarry Lane Fabrication Ltd\",\n  \"buyer_name\": \"Example Robotics Ltd\",\n  \"number\": \"INV-2026-0003\",\n  \"issue_date\": \"2026-06-29\",\n  \"due_date\": \"2026-07-29\",\n  \"currency\": \"EUR\",\n  \"line_items\": [\n    {\"description\": \"Nitrile gloves, size M, box of 100\", \"quantity\": 5, \"unit_price\": 11.24, \"amount\": 56.20},\n    {\"description\": \"M8 hex bolts, zinc plated, bag of 100\", \"quantity\": 3, \"unit_price\": 13.72, \"amount\": 41.16},\n    {\"description\": \"Safety goggles, anti-fog\", \"quantity\": 12, \"unit_price\": 9.67, \"amount\": 116.04},\n    {\"description\": \"Microcontroller dev board\", \"quantity\": 4, \"unit_price\": 18.87, \"amount\": 75.48}\n  ],\n  \"subtotal\": 288.88,\n  \"tax\": 54.89,\n  \"total\": 343.77\n}"
+    ]
+  }
+}
