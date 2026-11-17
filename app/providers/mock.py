@@ -1,8 +1,13 @@
 """Mock provider: replays stored responses keyed by the document's sha256.
 
-Each file `<sha256>.json` holds a list of responses, one per attempt, so a
-recording can include a deliberately invalid first answer followed by a valid
-one. That lets tests and CI exercise the retry loop with no model at all.
+A file `<sha256>.json` holds the raw model outputs, one per attempt, so a
+recording can contain an invalid first answer followed by a corrected one.
+That lets tests and CI exercise the retry loop with no model at all.
+
+    {"source": "...", "by_mode": {"text": ["{...}", "{...}"], "vision": ["{...}"]}}
+
+`scripts/eval.py --record` writes these files from real model runs. A plain
+`"responses": [...]` list is also accepted and used for any mode.
 """
 
 from __future__ import annotations
@@ -30,8 +35,11 @@ class MockProvider(LLMProvider):
                 f"(sha256 {request.doc_hash[:12]}...). Use a file from data/samples/ "
                 "or switch LLM_PROVIDER to ollama or claude."
             )
-        responses: list[str] = json.loads(path.read_text(encoding="utf-8"))["responses"]
+        recording = json.loads(path.read_text(encoding="utf-8"))
+        responses = recording.get("by_mode", {}).get(request.mode) or recording.get("responses")
         if not responses:
-            raise ProviderError(f"Recording {path.name} contains no responses")
+            raise ProviderError(
+                f"Recording {path.name} has no responses for {request.mode} mode"
+            )
         # Past the end of the recording, keep replaying the last answer.
         return responses[min(request.attempt, len(responses)) - 1]
