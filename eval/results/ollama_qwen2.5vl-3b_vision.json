@@ -1,0 +1,186 @@
+{
+  "config": {
+    "provider": "ollama",
+    "model": "qwen2.5vl:3b",
+    "mode": "vision",
+    "max_attempts": 3,
+    "subset": "inv-009-classic-scan,po-017-banded-scan",
+    "vision_max_side": 1280,
+    "date": "2026-11-17",
+    "hardware": "CPU-only laptop, AMD integrated graphics (unused by Ollama), 16 GB RAM, Windows 11",
+    "python": "3.14.5",
+    "complete": true
+  },
+  "summary": {
+    "documents": 2,
+    "field_accuracy": 1.0,
+    "per_field_accuracy": {
+      "document_type": 1.0,
+      "vendor_name": 1.0,
+      "buyer_name": 1.0,
+      "number": 1.0,
+      "currency": 1.0,
+      "issue_date": 1.0,
+      "secondary_date": 1.0,
+      "subtotal": 1.0,
+      "tax": 1.0,
+      "total": 1.0
+    },
+    "line_item_precision": 1.0,
+    "line_item_recall": 1.0,
+    "line_item_f1_micro": 1.0,
+    "line_item_f1_macro": 1.0,
+    "all_fields_correct_rate": 1.0,
+    "evaluated": 2,
+    "skipped": 0,
+    "provider_errors": 0,
+    "schema_valid_rate": 1.0,
+    "mean_retries": 0.0,
+    "docs_needing_retry": 0,
+    "mean_latency_s": 210.9625
+  },
+  "documents": [
+    {
+      "doc": "inv-009-classic-scan",
+      "file": "inv-009-classic-scan.png",
+      "pages": 1,
+      "status": "ok",
+      "valid": true,
+      "attempts": 1,
+      "retries": 0,
+      "latency_ms": 229805,
+      "attempt_latency_ms": [
+        229798
+      ],
+      "final_errors": [],
+      "score": {
+        "field_accuracy": 1.0,
+        "fields": {
+          "document_type": true,
+          "vendor_name": true,
+          "buyer_name": true,
+          "number": true,
+          "currency": true,
+          "issue_date": true,
+          "secondary_date": true,
+          "subtotal": true,
+          "tax": true,
+          "total": true
+        },
+        "line_items": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 4,
+          "f1": 1.0
+        },
+        "all_correct": true
+      },
+      "predicted": {
+        "vendor_name": "Driftwood Furniture Makers",
+        "buyer_name": "Example Robotics Ltd",
+        "number": "INV-2026-0009",
+        "issue_date": "2026-02-01",
+        "currency": "USD",
+        "line_items": [
+          {
+            "description": "Bookshelf, 5 tiers, walnut finish",
+            "quantity": 3.0,
+            "unit_price": 192.04,
+            "amount": 576.12
+          },
+          {
+            "description": "Pipette tips 200 ul, rack of 96",
+            "quantity": 6.0,
+            "unit_price": 6.38,
+            "amount": 38.28
+          },
+          {
+            "description": "Stainless steel bracket, 120 mm",
+            "quantity": 2.0,
+            "unit_price": 2.92,
+            "amount": 5.84
+          },
+          {
+            "description": "USB-C cable 1 m",
+            "quantity": 2.0,
+            "unit_price": 6.25,
+            "amount": 12.5
+          }
+        ],
+        "subtotal": 632.74,
+        "tax": 52.2,
+        "total": 684.94,
+        "document_type": "invoice",
+        "due_date": "2026-02-22"
+      }
+    },
+    {
+      "doc": "po-017-banded-scan",
+      "file": "po-017-banded-scan.png",
+      "pages": 1,
+      "status": "ok",
+      "valid": true,
+      "attempts": 1,
+      "retries": 0,
+      "latency_ms": 192120,
+      "attempt_latency_ms": [
+        192119
+      ],
+      "final_errors": [],
+      "score": {
+        "field_accuracy": 1.0,
+        "fields": {
+          "document_type": true,
+          "vendor_name": true,
+          "buyer_name": true,
+          "number": true,
+          "currency": true,
+          "issue_date": true,
+          "secondary_date": true,
+          "subtotal": true,
+          "tax": true,
+          "total": true
+        },
+        "line_items": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "f1": 1.0
+        },
+        "all_correct": true
+      },
+      "predicted": {
+        "vendor_name": "Quarry Lane Fabrication Ltd",
+        "buyer_name": "Acme-Free Bakery Co-op",
+        "number": "PO19983",
+        "issue_date": "2026-04-25",
+        "currency": "USD",
+        "line_items": [
+          {
+            "description": "Ceramic capacitor kit, 300 pcs",
+            "quantity": 2.0,
+            "unit_price": 20.62,
+            "amount": 41.24
+          },
+          {
+            "description": "A4 copier paper, 80gsm, box of 5 reams",
+            "quantity": 5.0,
+            "unit_price": 25.08,
+            "amount": 125.4
+          },
+          {
+            "description": "Pipette tips 200 ul, rack of 96",
+            "quantity": 1.0,
+            "unit_price": 8.98,
+            "amount": 8.98
+          }
+        ],
+        "subtotal": 175.62,
+        "tax": 14.49,
+        "total": 190.11,
+        "document_type": "purchase_order",
+        "delivery_date": "2026-06-09"
+      }
+    }
+  ]
+}

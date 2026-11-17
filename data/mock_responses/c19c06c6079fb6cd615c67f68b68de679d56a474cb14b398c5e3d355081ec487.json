@@ -1,0 +1,10 @@
+{
+  "sources": {
+    "vision": "ollama/qwen2.5vl:3b, vision mode, recorded 2026-11-17 by scripts/eval.py"
+  },
+  "by_mode": {
+    "vision": [
+      "{\n  \"document_type\": \"invoice\",\n  \"vendor_name\": \"Driftwood Furniture Makers\",\n  \"buyer_name\": \"Example Robotics Ltd\",\n  \"number\": \"INV-2026-0009\",\n  \"issue_date\": \"2026-02-01\",\n  \"due_date\": \"2026-02-22\",\n  \"currency\": \"USD\",\n  \"line_items\": [\n    {\n      \"description\": \"Bookshelf, 5 tiers, walnut finish\",\n      \"quantity\": 3,\n      \"unit_price\": 192.04,\n      \"amount\": 576.12\n    },\n    {\n      \"description\": \"Pipette tips 200 ul, rack of 96\",\n      \"quantity\": 6,\n      \"unit_price\": 6.38,\n      \"amount\": 38.28\n    },\n    {\n      \"description\": \"Stainless steel bracket, 120 mm\",\n      \"quantity\": 2,\n      \"unit_price\": 2.92,\n      \"amount\": 5.84\n    },\n    {\n      \"description\": \"USB-C cable 1 m\",\n      \"quantity\": 2,\n      \"unit_price\": 6.25,\n      \"amount\": 12.50\n    }\n  ],\n  \"subtotal\": 632.74,\n  \"tax\": 52.20,\n  \"total\": 684.94\n}"
+    ]
+  }
+}

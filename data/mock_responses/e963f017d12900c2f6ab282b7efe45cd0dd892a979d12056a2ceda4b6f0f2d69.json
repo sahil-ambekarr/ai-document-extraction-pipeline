@@ -1,0 +1,10 @@
+{
+  "sources": {
+    "vision": "ollama/qwen2.5vl:3b, vision mode, recorded 2026-11-17 by scripts/eval.py"
+  },
+  "by_mode": {
+    "vision": [
+      "{\n  \"document_type\": \"purchase_order\",\n  \"vendor_name\": \"Quarry Lane Fabrication Ltd\",\n  \"buyer_name\": \"Acme-Free Bakery Co-op\",\n  \"number\": \"PO19983\",\n  \"issue_date\": \"2026-04-25\",\n  \"delivery_date\": \"2026-06-09\",\n  \"currency\": \"USD\",\n  \"line_items\": [\n    {\n      \"description\": \"Ceramic capacitor kit, 300 pcs\",\n      \"quantity\": 2,\n      \"unit_price\": 20.62,\n      \"amount\": 41.24\n    },\n    {\n      \"description\": \"A4 copier paper, 80gsm, box of 5 reams\",\n      \"quantity\": 5,\n      \"unit_price\": 25.08,\n      \"amount\": 125.40\n    },\n    {\n      \"description\": \"Pipette tips 200 ul, rack of 96\",\n      \"quantity\": 1,\n      \"unit_price\": 8.98,\n      \"amount\": 8.98\n    }\n  ],\n  \"subtotal\": 175.62,\n  \"tax\": 14.49,\n  \"total\": 190.11\n}"
+    ]
+  }
+}
