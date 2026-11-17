@@ -96,7 +96,9 @@ class DocSpec:
     scan: bool = False
 
 
-# 18 documents: 10 invoices, 8 purchase orders; 3 multi-page; 4 rendered as scans.
+# 18 documents: 10 invoices, 8 purchase orders; 4 rendered as scans. Three are long (30+ lines)
+# and named "multipage", but only inv-005 and po-015 span two pages: the classic layout
+# fits inv-007's 30 lines on one page. Names are kept so labels and recordings stay stable.
 SPECS = [
     DocSpec("inv-001-classic", "invoice", "classic", 3),
     DocSpec("inv-002-banded", "invoice", "banded", 5),

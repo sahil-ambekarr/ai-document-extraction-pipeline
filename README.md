@@ -10,7 +10,16 @@ validation errors back to the model.
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.163-009688.svg)
 ![Ollama](https://img.shields.io/badge/LLM-Ollama%20%7C%20Claude%20%7C%20mock-555.svg)
 
-<!-- SCREENSHOTS -->
+Real extractions captured with Playwright (`scripts/screenshots.py`) through the web UI,
+with `LLM_PROVIDER=ollama` on my laptop:
+
+**Text mode, llama3.2:** a PDF invoice, schema-valid on the first attempt in 65 s.
+
+![Text-mode extraction of a PDF invoice with llama3.2](docs/screenshots/text-extraction-llama3.2.png)
+
+**Vision mode, qwen2.5vl:3b:** a skewed, noisy scan of a purchase order (no text layer).
+
+![Vision-mode extraction of a scanned purchase order with qwen2.5vl:3b](docs/screenshots/vision-scan-qwen2.5vl.png)
 
 ## The problem it automates
 
@@ -110,8 +119,8 @@ python -m app.main               # http://127.0.0.1:4102
 ```
 
 Try it without any model: set `LLM_PROVIDER=mock` in `.env` and upload a file from
-`data/samples/`. The mock provider replays answers that llama3.2 actually gave for that
-file during the eval run.
+`data/samples/`. The mock provider replays answers that llama3.2 (text) or qwen2.5vl:3b (vision)
+actually gave for that file during an eval run. Files without a recording return an error.
 
 Call the API directly:
 
@@ -155,7 +164,62 @@ All settings are environment variables; `.env` in the repo root is read at start
 
 ## Eval results
 
-<!-- EVAL -->
+All numbers below come from runs I made on 2026-11-17 on a CPU-only laptop (AMD
+integrated graphics, not used by Ollama; 16 GB RAM; Windows 11; Python 3.14.5), with
+Ollama shared with two other jobs at the same time. Full per-document and per-field
+tables are in [docs/eval-results.md](docs/eval-results.md); the raw output, including
+every prediction, is in `eval/results/*.json`.
+
+| Model | Mode | Docs | Field accuracy | Line-item F1 (micro) | All fields correct | Schema-valid | Needed a retry | Mean latency / doc |
+|---|---|---|---|---|---|---|---|---|
+| llama3.2 (3B) | text | 7 | 97.1% | 91.7% | 6 of 7 | 7 of 7 | 2 | 106 s |
+| qwen2.5vl:3b | vision | 2 scans | 100% | 100% | 2 of 2 | 2 of 2 | 0 | 211 s |
+
+**Method.** `scripts/eval.py` runs the same pipeline as the API (render, prompt,
+validate, retry with the error list, up to 3 attempts) one document at a time. It
+compares 10 header fields with the labels (text normalised, amounts within 0.01) and
+matches line items one-to-one for precision, recall and F1. Latency is wall time per
+document, retries included.
+
+**Subsets.** The full set has 18 synthetic documents. The budget for evals was about
+45 minutes of CPU time, so I did not run the full set:
+
+- Text, 7 documents: one per type and layout (invoice and PO x classic, banded,
+  compact) plus `inv-007`, a 30-line invoice. `inv-007` is named "multipage" but fits
+  on one page. The two documents that really span two pages (`inv-005`, `po-015`) are
+  **not** in the subset. In an earlier, interrupted run on the same day, `inv-005` took
+  685 s and was still invalid after 3 attempts. That run is not in the table, and
+  leaving it out makes the table look better than the full set would.
+- Vision, 2 scanned PNGs (`inv-009-classic-scan`, `po-017-banded-scan`). A first vision
+  attempt on four documents timed out (420 s per call) because qwen2.5vl was never
+  loaded while llama3.2 was still resident in the shared Ollama. I stopped that run
+  and reran two scans after unloading llama3.2. Two documents say very little about
+  vision accuracy.
+
+**What went wrong.** On `inv-007` llama3.2 returned 22 of 30 lines, plus a subtotal
+and total that add up for those 22 lines. The answer passed every schema rule and is
+still wrong, which is the gap between "schema-valid" and "correct". `inv-007` and
+`po-013` each needed one retry before passing validation.
+
+**Limitations.** The documents are synthetic, use three layouts and contain fictional
+companies, so these numbers do not predict accuracy on real invoices. One document
+moves a figure by 14 to 50 points. Latency depends heavily on what else Ollama is
+running: the same `po-017` scan took 192 s in the eval and 38 s in the screenshot run
+a few minutes later. The Claude provider is not in the table because it was not run
+(not verified against the live API).
+
+**Reproduce:**
+
+```bash
+LLM_TIMEOUT_SECONDS=420 python scripts/eval.py --provider ollama --mode text --max-attempts 3 \
+  --docs inv-001-classic,inv-002-banded,inv-003-compact,inv-007-classic-multipage,po-012-banded,po-013-compact,po-014-classic
+LLM_TIMEOUT_SECONDS=420 python scripts/eval.py --provider ollama --mode vision --max-attempts 3 \
+  --docs inv-009-classic-scan,po-017-banded-scan
+python scripts/eval.py --provider ollama --mode text      # full set (not run here)
+```
+
+On Windows PowerShell, set the timeout first with `$env:LLM_TIMEOUT_SECONDS=420`.
+Add `--record` to refresh the mock provider's recordings.
 
 ## Project structure
 
@@ -192,7 +256,8 @@ pytest          # all tests, no model or network needed
 ruff check .
 ```
 
-<!-- TESTS -->
+Last local run (2026-11-17, Python 3.14.5, Windows 11): `pytest` reported
+`77 passed`, and `ruff check .` reported `All checks passed!`.
 
 The suite covers schema rules (each cross-field check, tolerance, number parsing, date
 sanity), the retry loop with a scripted provider that fails and then succeeds, giving up
@@ -214,13 +279,15 @@ CI (GitHub Actions) runs ruff, pytest and a mock-mode replay of the eval on Pyth
   is saved with its errors and the last answer, but its typed SQL columns and line
   items stay empty, so downstream SQL only sees validated data.
 - **Mock provider replays real recordings.** `scripts/eval.py --record` stores the raw
-  llama3.2 answers per document and mode, so the mock demo and CI exercise real model
-  output (including real retries) without a model.
+  llama3.2 and qwen2.5vl answers per document and mode, so the mock demo and CI
+  exercise real model output (including real retries) without a model.
 - **Synthetic data only.** The generator is seeded and produces byte-identical files on
   re-run (checked locally on Windows), so the eval is reproducible and contains no
   real company data.
 - **Sequential, long-timeout model calls.** The machine runs Ollama on CPU and shares it
-  with other work; the eval sends one request at a time and allows 15 minutes per call.
+  with other work; the eval sends one request at a time. The default timeout is 15
+  minutes per call; the reported eval runs used 7 minutes (`LLM_TIMEOUT_SECONDS=420`)
+  so one stalled call could not use up the eval budget.
 - **No background job queue.** `POST /extract` blocks until the extraction finishes
   (run in a worker thread). Simple to follow; a queue would be the first change for
   real use.
