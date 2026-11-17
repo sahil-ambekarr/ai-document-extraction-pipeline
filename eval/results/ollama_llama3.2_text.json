@@ -1,0 +1,660 @@
+{
+  "config": {
+    "provider": "ollama",
+    "model": "llama3.2",
+    "mode": "text",
+    "max_attempts": 3,
+    "subset": "inv-001-classic,inv-002-banded,inv-003-compact,inv-007-classic-multipage,po-012-banded,po-013-compact,po-014-classic",
+    "vision_max_side": 1280,
+    "date": "2026-11-17",
+    "hardware": "CPU-only laptop, AMD integrated graphics (unused by Ollama), 16 GB RAM, Windows 11",
+    "python": "3.14.5",
+    "complete": true
+  },
+  "summary": {
+    "documents": 7,
+    "field_accuracy": 0.9714285714285713,
+    "per_field_accuracy": {
+      "document_type": 1.0,
+      "vendor_name": 1.0,
+      "buyer_name": 1.0,
+      "number": 1.0,
+      "currency": 1.0,
+      "issue_date": 1.0,
+      "secondary_date": 1.0,
+      "subtotal": 0.8571428571428571,
+      "tax": 1.0,
+      "total": 0.8571428571428571
+    },
+    "line_item_precision": 1.0,
+    "line_item_recall": 0.8461538461538461,
+    "line_item_f1_micro": 0.9166666666666666,
+    "line_item_f1_macro": 0.978021978021978,
+    "all_fields_correct_rate": 0.8571428571428571,
+    "evaluated": 7,
+    "skipped": 0,
+    "provider_errors": 0,
+    "schema_valid_rate": 1.0,
+    "mean_retries": 0.2857142857142857,
+    "docs_needing_retry": 2,
+    "mean_latency_s": 106.43757142857143
+  },
+  "documents": [
+    {
+      "doc": "inv-001-classic",
+      "file": "inv-001-classic.pdf",
+      "pages": 1,
+      "status": "ok",
+      "valid": true,
+      "attempts": 1,
+      "retries": 0,
+      "latency_ms": 59221,
+      "attempt_latency_ms": [
+        59207
+      ],
+      "final_errors": [],
+      "score": {
+        "field_accuracy": 1.0,
+        "fields": {
+          "document_type": true,
+          "vendor_name": true,
+          "buyer_name": true,
+          "number": true,
+          "currency": true,
+          "issue_date": true,
+          "secondary_date": true,
+          "subtotal": true,
+          "tax": true,
+          "total": true
+        },
+        "line_items": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "f1": 1.0
+        },
+        "all_correct": true
+      },
+      "predicted": {
+        "vendor_name": "Nimbus Paper & Ink GmbH",
+        "buyer_name": "Example Robotics Ltd",
+        "number": "INV76761",
+        "issue_date": "2026-04-14",
+        "currency": "EUR",
+        "line_items": [
+          {
+            "description": "Task chair with lumbar support",
+            "quantity": 5.0,
+            "unit_price": 130.72,
+            "amount": 653.6
+          },
+          {
+            "description": "Ceramic capacitor kit, 300 pcs",
+            "quantity": 1.0,
+            "unit_price": 12.17,
+            "amount": 12.17
+          },
+          {
+            "description": "On-site installation, per hour",
+            "quantity": 4.0,
+            "unit_price": 52.07,
+            "amount": 208.28
+          }
+        ],
+        "subtotal": 874.05,
+        "tax": 166.07,
+        "total": 1040.12,
+        "document_type": "invoice",
+        "due_date": "2026-05-05"
+      }
+    },
+    {
+      "doc": "inv-002-banded",
+      "file": "inv-002-banded.pdf",
+      "pages": 1,
+      "status": "ok",
+      "valid": true,
+      "attempts": 1,
+      "retries": 0,
+      "latency_ms": 89597,
+      "attempt_latency_ms": [
+        89597
+      ],
+      "final_errors": [],
+      "score": {
+        "field_accuracy": 1.0,
+        "fields": {
+          "document_type": true,
+          "vendor_name": true,
+          "buyer_name": true,
+          "number": true,
+          "currency": true,
+          "issue_date": true,
+          "secondary_date": true,
+          "subtotal": true,
+          "tax": true,
+          "total": true
+        },
+        "line_items": {
+          "matched": 5,
+          "predicted": 5,
+          "expected": 5,
+          "f1": 1.0
+        },
+        "all_correct": true
+      },
+      "predicted": {
+        "vendor_name": "Nimbus Paper & Ink GmbH",
+        "buyer_name": "Sample Valley School District",
+        "number": "INV-2026-0002",
+        "issue_date": "2026-05-01",
+        "currency": "EUR",
+        "line_items": [
+          {
+            "description": "Whiteboard markers, assorted, pack of 12",
+            "quantity": 20.0,
+            "unit_price": 13.2,
+            "amount": 264.0
+          },
+          {
+            "description": "Welding wire spool 0.8 mm, 5 kg",
+            "quantity": 4.0,
+            "unit_price": 44.71,
+            "amount": 178.84
+          },
+          {
+            "description": "Nitrile gloves, size M, box of 100",
+            "quantity": 2.0,
+            "unit_price": 12.31,
+            "amount": 24.62
+          },
+          {
+            "description": "Stainless steel bracket, 120 mm",
+            "quantity": 2.0,
+            "unit_price": 2.86,
+            "amount": 5.72
+          },
+          {
+            "description": "Glass beakers 250 ml, set of 6",
+            "quantity": 2.0,
+            "unit_price": 35.98,
+            "amount": 71.96
+          }
+        ],
+        "subtotal": 545.14,
+        "tax": 109.03,
+        "total": 654.17,
+        "document_type": "invoice",
+        "due_date": "2026-05-22"
+      }
+    },
+    {
+      "doc": "inv-003-compact",
+      "file": "inv-003-compact.pdf",
+      "pages": 1,
+      "status": "ok",
+      "valid": true,
+      "attempts": 1,
+      "retries": 0,
+      "latency_ms": 81201,
+      "attempt_latency_ms": [
+        81201
+      ],
+      "final_errors": [],
+      "score": {
+        "field_accuracy": 1.0,
+        "fields": {
+          "document_type": true,
+          "vendor_name": true,
+          "buyer_name": true,
+          "number": true,
+          "currency": true,
+          "issue_date": true,
+          "secondary_date": true,
+          "subtotal": true,
+          "tax": true,
+          "total": true
+        },
+        "line_items": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 4,
+          "f1": 1.0
+        },
+        "all_correct": true
+      },
+      "predicted": {
+        "vendor_name": "Quarry Lane Fabrication Ltd",
+        "buyer_name": "Example Robotics Ltd",
+        "number": "INV-2026-0003",
+        "issue_date": "2026-06-29",
+        "currency": "EUR",
+        "line_items": [
+          {
+            "description": "Nitrile gloves, size M, box of 100",
+            "quantity": 5.0,
+            "unit_price": 11.24,
+            "amount": 56.2
+          },
+          {
+            "description": "M8 hex bolts, zinc plated, bag of 100",
+            "quantity": 3.0,
+            "unit_price": 13.72,
+            "amount": 41.16
+          },
+          {
+            "description": "Safety goggles, anti-fog",
+            "quantity": 12.0,
+            "unit_price": 9.67,
+            "amount": 116.04
+          },
+          {
+            "description": "Microcontroller dev board",
+            "quantity": 4.0,
+            "unit_price": 18.87,
+            "amount": 75.48
+          }
+        ],
+        "subtotal": 288.88,
+        "tax": 54.89,
+        "total": 343.77,
+        "document_type": "invoice",
+        "due_date": "2026-07-29"
+      }
+    },
+    {
+      "doc": "inv-007-classic-multipage",
+      "file": "inv-007-classic-multipage.pdf",
+      "pages": 1,
+      "status": "ok",
+      "valid": true,
+      "attempts": 2,
+      "retries": 1,
+      "latency_ms": 342923,
+      "attempt_latency_ms": [
+        170394,
+        172519
+      ],
+      "final_errors": [],
+      "score": {
+        "field_accuracy": 0.8,
+        "fields": {
+          "document_type": true,
+          "vendor_name": true,
+          "buyer_name": true,
+          "number": true,
+          "currency": true,
+          "issue_date": true,
+          "secondary_date": true,
+          "subtotal": false,
+          "tax": true,
+          "total": false
+        },
+        "line_items": {
+          "matched": 22,
+          "predicted": 22,
+          "expected": 30,
+          "f1": 0.8462
+        },
+        "all_correct": false
+      },
+      "predicted": {
+        "vendor_name": "Pinecone Cleaning Collective",
+        "buyer_name": "Acme-Free Bakery Co-op",
+        "number": "372/INV/26",
+        "issue_date": "2026-01-24",
+        "currency": "GBP",
+        "line_items": [
+          {
+            "description": "Ceramic capacitor kit, 300 pcs",
+            "quantity": 6.0,
+            "unit_price": 12.4,
+            "amount": 74.4
+          },
+          {
+            "description": "USB-C cable 1 m",
+            "quantity": 2.0,
+            "unit_price": 4.33,
+            "amount": 8.66
+          },
+          {
+            "description": "Shipping cartons, 40 x 30 x 30 cm, bundle of 25",
+            "quantity": 20.0,
+            "unit_price": 27.65,
+            "amount": 553.0
+          },
+          {
+            "description": "On-site installation, per hour",
+            "quantity": 6.0,
+            "unit_price": 84.42,
+            "amount": 506.52
+          },
+          {
+            "description": "Pipette tips 200 ul, rack of 96",
+            "quantity": 2.0,
+            "unit_price": 9.95,
+            "amount": 19.9
+          },
+          {
+            "description": "Lunch buffet per person",
+            "quantity": 8.0,
+            "unit_price": 22.79,
+            "amount": 182.32
+          },
+          {
+            "description": "Microcontroller dev board",
+            "quantity": 3.0,
+            "unit_price": 23.16,
+            "amount": 69.48
+          },
+          {
+            "description": "M8 hex bolts, zinc plated, bag of 100",
+            "quantity": 1.0,
+            "unit_price": 20.01,
+            "amount": 20.01
+          },
+          {
+            "description": "USB-C cable 1 m",
+            "quantity": 8.0,
+            "unit_price": 3.71,
+            "amount": 29.68
+          },
+          {
+            "description": "Bookshelf, 5 tiers, walnut finish",
+            "quantity": 20.0,
+            "unit_price": 167.66,
+            "amount": 3353.2
+          },
+          {
+            "description": "Task chair with lumbar support",
+            "quantity": 12.0,
+            "unit_price": 244.45,
+            "amount": 2933.4
+          },
+          {
+            "description": "On-site installation, per hour",
+            "quantity": 4.0,
+            "unit_price": 92.08,
+            "amount": 368.32
+          },
+          {
+            "description": "USB-C cable 1 m",
+            "quantity": 2.0,
+            "unit_price": 8.49,
+            "amount": 16.98
+          },
+          {
+            "description": "A4 copier paper, 80gsm, box of 5 reams",
+            "quantity": 5.0,
+            "unit_price": 38.06,
+            "amount": 190.3
+          },
+          {
+            "description": "Laser toner cartridge, black",
+            "quantity": 5.0,
+            "unit_price": 45.94,
+            "amount": 229.7
+          },
+          {
+            "description": "Pipette tips 200 ul, rack of 96",
+            "quantity": 3.0,
+            "unit_price": 9.29,
+            "amount": 27.87
+          },
+          {
+            "description": "A4 copier paper, 80gsm, box of 5 reams",
+            "quantity": 2.0,
+            "unit_price": 33.99,
+            "amount": 67.98
+          },
+          {
+            "description": "A4 copier paper, 80gsm, box of 5 reams",
+            "quantity": 3.0,
+            "unit_price": 41.18,
+            "amount": 123.54
+          },
+          {
+            "description": "USB-C cable 1 m",
+            "quantity": 6.0,
+            "unit_price": 5.89,
+            "amount": 35.34
+          },
+          {
+            "description": "Lunch buffet per person",
+            "quantity": 25.0,
+            "unit_price": 18.74,
+            "amount": 468.5
+          },
+          {
+            "description": "Welding wire spool 0.8 mm, 5 kg",
+            "quantity": 20.0,
+            "unit_price": 34.21,
+            "amount": 684.2
+          },
+          {
+            "description": "Ceramic capacitor kit, 300 pcs",
+            "quantity": 8.0,
+            "unit_price": 19.92,
+            "amount": 159.36
+          }
+        ],
+        "subtotal": 10122.66,
+        "tax": 2253.15,
+        "total": 12375.81,
+        "document_type": "invoice",
+        "due_date": "2026-03-10"
+      }
+    },
+    {
+      "doc": "po-012-banded",
+      "file": "po-012-banded.pdf",
+      "pages": 1,
+      "status": "ok",
+      "valid": true,
+      "attempts": 1,
+      "retries": 0,
+      "latency_ms": 48633,
+      "attempt_latency_ms": [
+        48633
+      ],
+      "final_errors": [],
+      "score": {
+        "field_accuracy": 1.0,
+        "fields": {
+          "document_type": true,
+          "vendor_name": true,
+          "buyer_name": true,
+          "number": true,
+          "currency": true,
+          "issue_date": true,
+          "secondary_date": true,
+          "subtotal": true,
+          "tax": true,
+          "total": true
+        },
+        "line_items": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "f1": 1.0
+        },
+        "all_correct": true
+      },
+      "predicted": {
+        "vendor_name": "Driftwood Furniture Makers",
+        "buyer_name": "Fictional Harbour Clinic",
+        "number": "PO-2026-0012",
+        "issue_date": "2026-07-04",
+        "currency": "INR",
+        "line_items": [
+          {
+            "description": "Ballpoint pens, blue, pack of 50",
+            "quantity": 6.0,
+            "unit_price": 8.01,
+            "amount": 48.06
+          },
+          {
+            "description": "On-site installation, per hour",
+            "quantity": 4.0,
+            "unit_price": 75.41,
+            "amount": 301.64
+          },
+          {
+            "description": "Ceramic capacitor kit, 300 pcs",
+            "quantity": 10.0,
+            "unit_price": 27.78,
+            "amount": 277.8
+          }
+        ],
+        "subtotal": 627.5,
+        "tax": 112.95,
+        "total": 740.45,
+        "document_type": "purchase_order",
+        "delivery_date": "2026-07-25"
+      }
+    },
+    {
+      "doc": "po-013-compact",
+      "file": "po-013-compact.pdf",
+      "pages": 1,
+      "status": "ok",
+      "valid": true,
+      "attempts": 2,
+      "retries": 1,
+      "latency_ms": 86995,
+      "attempt_latency_ms": [
+        45576,
+        41417
+      ],
+      "final_errors": [],
+      "score": {
+        "field_accuracy": 1.0,
+        "fields": {
+          "document_type": true,
+          "vendor_name": true,
+          "buyer_name": true,
+          "number": true,
+          "currency": true,
+          "issue_date": true,
+          "secondary_date": true,
+          "subtotal": true,
+          "tax": true,
+          "total": true
+        },
+        "line_items": {
+          "matched": 5,
+          "predicted": 5,
+          "expected": 5,
+          "f1": 1.0
+        },
+        "all_correct": true
+      },
+      "predicted": {
+        "vendor_name": "Nimbus Paper & Ink GmbH",
+        "buyer_name": "Example Robotics Ltd",
+        "number": "PO12960",
+        "issue_date": "2026-10-28",
+        "currency": "GBP",
+        "line_items": [
+          {
+            "description": "On-site installation, per hour",
+            "quantity": 7.5,
+            "unit_price": 62.1,
+            "amount": 465.75
+          },
+          {
+            "description": "Deep cleaning, per hour",
+            "quantity": 7.5,
+            "unit_price": 32.21,
+            "amount": 241.58
+          },
+          {
+            "description": "M8 hex bolts, zinc plated, bag of 100",
+            "quantity": 4.0,
+            "unit_price": 18.1,
+            "amount": 72.4
+          },
+          {
+            "description": "Aluminium sheet 1 mm, 1 x 2 m",
+            "quantity": 10.0,
+            "unit_price": 52.56,
+            "amount": 525.6
+          },
+          {
+            "description": "Bookshelf, 5 tiers, walnut finish",
+            "quantity": 5.0,
+            "unit_price": 285.41,
+            "amount": 1427.05
+          }
+        ],
+        "subtotal": 2732.38,
+        "tax": 546.48,
+        "total": 3278.86,
+        "document_type": "purchase_order",
+        "delivery_date": "2026-11-11"
+      }
+    },
+    {
+      "doc": "po-014-classic",
+      "file": "po-014-classic.pdf",
+      "pages": 1,
+      "status": "ok",
+      "valid": true,
+      "attempts": 1,
+      "retries": 0,
+      "latency_ms": 36493,
+      "attempt_latency_ms": [
+        36493
+      ],
+      "final_errors": [],
+      "score": {
+        "field_accuracy": 1.0,
+        "fields": {
+          "document_type": true,
+          "vendor_name": true,
+          "buyer_name": true,
+          "number": true,
+          "currency": true,
+          "issue_date": true,
+          "secondary_date": true,
+          "subtotal": true,
+          "tax": true,
+          "total": true
+        },
+        "line_items": {
+          "matched": 2,
+          "predicted": 2,
+          "expected": 2,
+          "f1": 1.0
+        },
+        "all_correct": true
+      },
+      "predicted": {
+        "vendor_name": "Quarry Lane Fabrication Ltd",
+        "buyer_name": "Fictional Harbour Clinic",
+        "number": "PO67645",
+        "issue_date": "2026-04-17",
+        "currency": "INR",
+        "line_items": [
+          {
+            "description": "Microcontroller dev board",
+            "quantity": 20.0,
+            "unit_price": 20.73,
+            "amount": 414.6
+          },
+          {
+            "description": "Glass beakers 250 ml, set of 6",
+            "quantity": 10.0,
+            "unit_price": 34.08,
+            "amount": 340.8
+          }
+        ],
+        "subtotal": 755.4,
+        "tax": 135.97,
+        "total": 891.37,
+        "document_type": "purchase_order",
+        "delivery_date": "2026-06-01"
+      }
+    }
+  ]
+}
