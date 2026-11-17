@@ -1,0 +1,17 @@
+[project]
+name = "ai-document-extraction-pipeline"
+version = "0.1.0"
+description = "Invoice and purchase order extraction with an LLM, schema validation and auto-retry"
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+ignore = ["B008"]  # FastAPI's Depends()/File() defaults are intentional
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
