@@ -76,6 +76,12 @@ def evaluate(args: argparse.Namespace, results_dir: Path) -> Path:
     run_date = dt.date.today().isoformat()
     documents: list[dict[str, Any]] = []
     scores = []
+    config = {
+        "provider": args.provider, "model": model, "mode": args.mode,
+        "max_attempts": args.max_attempts, "subset": args.docs or "all",
+        "vision_max_side": settings.vision_max_side, "date": run_date,
+        "hardware": HARDWARE, "python": platform.python_version(),
+    }
 
     for stem, label in load_labels(args.docs.split(",") if args.docs else None):
         data = (SAMPLES / label["file"]).read_bytes()
@@ -127,7 +133,16 @@ def evaluate(args: argparse.Namespace, results_dir: Path) -> Path:
         print(f"valid={result.valid} retries={result.retry_count} "
               f"fields={score.field_accuracy:.2f} items_f1={score.line_items.f1:.2f} "
               f"{result.latency_ms / 1000:.0f}s")
+        # Save after every document so an interrupted run still leaves its results.
+        _write_results(results_dir, config, documents, scores, complete=False)
 
+    path = _write_results(results_dir, config, documents, scores, complete=True)
+    print(f"wrote {path}")
+    return path
+
+
+def _write_results(results_dir: Path, config: dict[str, Any], documents: list[dict[str, Any]],
+                   scores: list, complete: bool) -> Path:
     ran = [d for d in documents if d["status"] == "ok"]
     summary = aggregate(scores) if scores else {}
     summary.update(
@@ -140,20 +155,16 @@ def evaluate(args: argparse.Namespace, results_dir: Path) -> Path:
         mean_latency_s=(sum(d["latency_ms"] for d in ran) / len(ran) / 1000) if ran else 0.0,
     )
     output = {
-        "config": {
-            "provider": args.provider, "model": model, "mode": args.mode,
-            "max_attempts": args.max_attempts, "subset": args.docs or "all",
-            "vision_max_side": settings.vision_max_side, "date": run_date,
-            "hardware": HARDWARE, "python": platform.python_version(),
-        },
+        "config": {**config, "complete": complete},
         "summary": summary,
         "documents": documents,
     }
     results_dir.mkdir(parents=True, exist_ok=True)
-    path = results_dir / f"{args.provider}_{_slug(model)}_{args.mode}.json"
+    path = results_dir / f"{config['provider']}_{_slug(config['model'])}_{config['mode']}.json"
     path.write_text(json.dumps(output, indent=2) + "\n", encoding="utf-8", newline="\n")
-    print(f"wrote {path}")
-    print(json.dumps({k: v for k, v in summary.items() if k != "per_field_accuracy"}, indent=2))
+    if complete:
+        print(json.dumps({k: v for k, v in summary.items() if k != "per_field_accuracy"},
+                         indent=2))
     return path
 
 
@@ -183,6 +194,8 @@ def write_report(results_dir: Path) -> None:
                                         else "")
         if s.get("skipped"):
             scored += f", {s['skipped']} skipped"
+        if c.get("complete") is False:
+            scored += ", run interrupted"
         lines.append(
             f"| {c['provider']} | {c['model']} | {c['mode']} | {scored} "
             f"| {_pct(s.get('field_accuracy', 0))} | {_pct(s.get('line_item_f1_micro', 0))} "
