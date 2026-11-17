@@ -1,0 +1,28 @@
+{
+  "file": "inv-006-compact.pdf",
+  "document_type": "invoice",
+  "vendor_name": "Copperleaf Catering Services",
+  "buyer_name": "Sample Valley School District",
+  "number": "INV40871",
+  "issue_date": "2026-07-07",
+  "due_date": "2026-08-06",
+  "delivery_date": null,
+  "currency": "GBP",
+  "line_items": [
+    {
+      "description": "Coffee and tea service per person",
+      "quantity": 20,
+      "unit_price": 3.66,
+      "amount": 73.2
+    },
+    {
+      "description": "Ceramic capacitor kit, 300 pcs",
+      "quantity": 6,
+      "unit_price": 23.93,
+      "amount": 143.58
+    }
+  ],
+  "subtotal": 216.78,
+  "tax": 43.36,
+  "total": 260.14
+}

@@ -1,0 +1,220 @@
+{
+  "file": "po-015-banded-multipage.pdf",
+  "document_type": "purchase_order",
+  "vendor_name": "Nimbus Paper & Ink GmbH",
+  "buyer_name": "Fictional Harbour Clinic",
+  "number": "605/PO/26",
+  "issue_date": "2026-08-13",
+  "due_date": null,
+  "delivery_date": "2026-09-27",
+  "currency": "EUR",
+  "line_items": [
+    {
+      "description": "Glass beakers 250 ml, set of 6",
+      "quantity": 12,
+      "unit_price": 19.99,
+      "amount": 239.88
+    },
+    {
+      "description": "Glass beakers 250 ml, set of 6",
+      "quantity": 20,
+      "unit_price": 19.1,
+      "amount": 382.0
+    },
+    {
+      "description": "Ballpoint pens, blue, pack of 50",
+      "quantity": 6,
+      "unit_price": 10.6,
+      "amount": 63.6
+    },
+    {
+      "description": "Glass beakers 250 ml, set of 6",
+      "quantity": 5,
+      "unit_price": 30.95,
+      "amount": 154.75
+    },
+    {
+      "description": "On-site installation, per hour",
+      "quantity": 2.5,
+      "unit_price": 58.63,
+      "amount": 146.58
+    },
+    {
+      "description": "Welding wire spool 0.8 mm, 5 kg",
+      "quantity": 5,
+      "unit_price": 55.27,
+      "amount": 276.35
+    },
+    {
+      "description": "On-site installation, per hour",
+      "quantity": 4,
+      "unit_price": 38.11,
+      "amount": 152.44
+    },
+    {
+      "description": "Pipette tips 200 ul, rack of 96",
+      "quantity": 20,
+      "unit_price": 11.76,
+      "amount": 235.2
+    },
+    {
+      "description": "Welding wire spool 0.8 mm, 5 kg",
+      "quantity": 20,
+      "unit_price": 41.71,
+      "amount": 834.2
+    },
+    {
+      "description": "Aluminium sheet 1 mm, 1 x 2 m",
+      "quantity": 5,
+      "unit_price": 34.18,
+      "amount": 170.9
+    },
+    {
+      "description": "Laser toner cartridge, black",
+      "quantity": 5,
+      "unit_price": 64.96,
+      "amount": 324.8
+    },
+    {
+      "description": "Oak desk, 140 x 70 cm",
+      "quantity": 1,
+      "unit_price": 224.98,
+      "amount": 224.98
+    },
+    {
+      "description": "Task chair with lumbar support",
+      "quantity": 8,
+      "unit_price": 96.86,
+      "amount": 774.88
+    },
+    {
+      "description": "Bookshelf, 5 tiers, walnut finish",
+      "quantity": 20,
+      "unit_price": 181.22,
+      "amount": 3624.4
+    },
+    {
+      "description": "Deep cleaning, per hour",
+      "quantity": 6,
+      "unit_price": 21.34,
+      "amount": 128.04
+    },
+    {
+      "description": "Coffee and tea service per person",
+      "quantity": 4,
+      "unit_price": 4.57,
+      "amount": 18.28
+    },
+    {
+      "description": "Stainless steel bracket, 120 mm",
+      "quantity": 4,
+      "unit_price": 2.57,
+      "amount": 10.28
+    },
+    {
+      "description": "Oak desk, 140 x 70 cm",
+      "quantity": 1,
+      "unit_price": 244.76,
+      "amount": 244.76
+    },
+    {
+      "description": "Laser toner cartridge, black",
+      "quantity": 10,
+      "unit_price": 53.4,
+      "amount": 534.0
+    },
+    {
+      "description": "Deep cleaning, per hour",
+      "quantity": 2.5,
+      "unit_price": 28.8,
+      "amount": 72.0
+    },
+    {
+      "description": "Laser toner cartridge, black",
+      "quantity": 12,
+      "unit_price": 63.97,
+      "amount": 767.64
+    },
+    {
+      "description": "On-site installation, per hour",
+      "quantity": 7.5,
+      "unit_price": 53.72,
+      "amount": 402.9
+    },
+    {
+      "description": "A4 copier paper, 80gsm, box of 5 reams",
+      "quantity": 4,
+      "unit_price": 41.0,
+      "amount": 164.0
+    },
+    {
+      "description": "Pipette tips 200 ul, rack of 96",
+      "quantity": 5,
+      "unit_price": 9.11,
+      "amount": 45.55
+    },
+    {
+      "description": "Shipping cartons, 40 x 30 x 30 cm, bundle of 25",
+      "quantity": 4,
+      "unit_price": 25.41,
+      "amount": 101.64
+    },
+    {
+      "description": "Safety goggles, anti-fog",
+      "quantity": 20,
+      "unit_price": 7.95,
+      "amount": 159.0
+    },
+    {
+      "description": "Ceramic capacitor kit, 300 pcs",
+      "quantity": 20,
+      "unit_price": 24.23,
+      "amount": 484.6
+    },
+    {
+      "description": "Coffee and tea service per person",
+      "quantity": 12,
+      "unit_price": 5.91,
+      "amount": 70.92
+    },
+    {
+      "description": "Ceramic capacitor kit, 300 pcs",
+      "quantity": 3,
+      "unit_price": 20.91,
+      "amount": 62.73
+    },
+    {
+      "description": "Safety goggles, anti-fog",
+      "quantity": 20,
+      "unit_price": 11.55,
+      "amount": 231.0
+    },
+    {
+      "description": "Ceramic capacitor kit, 300 pcs",
+      "quantity": 8,
+      "unit_price": 20.51,
+      "amount": 164.08
+    },
+    {
+      "description": "Welding wire spool 0.8 mm, 5 kg",
+      "quantity": 12,
+      "unit_price": 58.15,
+      "amount": 697.8
+    },
+    {
+      "description": "Welding wire spool 0.8 mm, 5 kg",
+      "quantity": 8,
+      "unit_price": 41.96,
+      "amount": 335.68
+    },
+    {
+      "description": "Microcontroller dev board",
+      "quantity": 2,
+      "unit_price": 12.72,
+      "amount": 25.44
+    }
+  ],
+  "subtotal": 12325.3,
+  "tax": 2465.06,
+  "total": 14790.36
+}

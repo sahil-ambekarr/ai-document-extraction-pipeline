@@ -1,0 +1,208 @@
+{
+  "file": "inv-005-banded-multipage.pdf",
+  "document_type": "invoice",
+  "vendor_name": "Pinecone Cleaning Collective",
+  "buyer_name": "Example Robotics Ltd",
+  "number": "INV40339",
+  "issue_date": "2026-10-15",
+  "due_date": "2026-11-05",
+  "delivery_date": null,
+  "currency": "INR",
+  "line_items": [
+    {
+      "description": "Nitrile gloves, size M, box of 100",
+      "quantity": 4,
+      "unit_price": 14.22,
+      "amount": 56.88
+    },
+    {
+      "description": "Aluminium sheet 1 mm, 1 x 2 m",
+      "quantity": 10,
+      "unit_price": 51.48,
+      "amount": 514.8
+    },
+    {
+      "description": "Ceramic capacitor kit, 300 pcs",
+      "quantity": 10,
+      "unit_price": 19.18,
+      "amount": 191.8
+    },
+    {
+      "description": "Coffee and tea service per person",
+      "quantity": 1,
+      "unit_price": 3.33,
+      "amount": 3.33
+    },
+    {
+      "description": "Deep cleaning, per hour",
+      "quantity": 2.5,
+      "unit_price": 41.28,
+      "amount": 103.2
+    },
+    {
+      "description": "On-site installation, per hour",
+      "quantity": 2.5,
+      "unit_price": 35.63,
+      "amount": 89.08
+    },
+    {
+      "description": "Nitrile gloves, size M, box of 100",
+      "quantity": 5,
+      "unit_price": 14.28,
+      "amount": 71.4
+    },
+    {
+      "description": "Ceramic capacitor kit, 300 pcs",
+      "quantity": 6,
+      "unit_price": 25.69,
+      "amount": 154.14
+    },
+    {
+      "description": "A4 copier paper, 80gsm, box of 5 reams",
+      "quantity": 8,
+      "unit_price": 27.09,
+      "amount": 216.72
+    },
+    {
+      "description": "Aluminium sheet 1 mm, 1 x 2 m",
+      "quantity": 8,
+      "unit_price": 54.34,
+      "amount": 434.72
+    },
+    {
+      "description": "Welding wire spool 0.8 mm, 5 kg",
+      "quantity": 10,
+      "unit_price": 39.36,
+      "amount": 393.6
+    },
+    {
+      "description": "Microcontroller dev board",
+      "quantity": 8,
+      "unit_price": 12.19,
+      "amount": 97.52
+    },
+    {
+      "description": "Welding wire spool 0.8 mm, 5 kg",
+      "quantity": 4,
+      "unit_price": 48.18,
+      "amount": 192.72
+    },
+    {
+      "description": "USB-C cable 1 m",
+      "quantity": 2,
+      "unit_price": 3.91,
+      "amount": 7.82
+    },
+    {
+      "description": "Task chair with lumbar support",
+      "quantity": 25,
+      "unit_price": 189.03,
+      "amount": 4725.75
+    },
+    {
+      "description": "Coffee and tea service per person",
+      "quantity": 3,
+      "unit_price": 4.8,
+      "amount": 14.4
+    },
+    {
+      "description": "Whiteboard markers, assorted, pack of 12",
+      "quantity": 12,
+      "unit_price": 8.91,
+      "amount": 106.92
+    },
+    {
+      "description": "Safety goggles, anti-fog",
+      "quantity": 1,
+      "unit_price": 4.67,
+      "amount": 4.67
+    },
+    {
+      "description": "Safety goggles, anti-fog",
+      "quantity": 8,
+      "unit_price": 7.62,
+      "amount": 60.96
+    },
+    {
+      "description": "USB-C cable 1 m",
+      "quantity": 10,
+      "unit_price": 9.31,
+      "amount": 93.1
+    },
+    {
+      "description": "Whiteboard markers, assorted, pack of 12",
+      "quantity": 3,
+      "unit_price": 15.08,
+      "amount": 45.24
+    },
+    {
+      "description": "Oak desk, 140 x 70 cm",
+      "quantity": 12,
+      "unit_price": 475.66,
+      "amount": 5707.92
+    },
+    {
+      "description": "Pipette tips 200 ul, rack of 96",
+      "quantity": 6,
+      "unit_price": 6.32,
+      "amount": 37.92
+    },
+    {
+      "description": "Ballpoint pens, blue, pack of 50",
+      "quantity": 20,
+      "unit_price": 13.4,
+      "amount": 268.0
+    },
+    {
+      "description": "Bookshelf, 5 tiers, walnut finish",
+      "quantity": 2,
+      "unit_price": 302.54,
+      "amount": 605.08
+    },
+    {
+      "description": "Coffee and tea service per person",
+      "quantity": 5,
+      "unit_price": 3.44,
+      "amount": 17.2
+    },
+    {
+      "description": "Task chair with lumbar support",
+      "quantity": 4,
+      "unit_price": 207.46,
+      "amount": 829.84
+    },
+    {
+      "description": "USB-C cable 1 m",
+      "quantity": 20,
+      "unit_price": 6.83,
+      "amount": 136.6
+    },
+    {
+      "description": "Pipette tips 200 ul, rack of 96",
+      "quantity": 2,
+      "unit_price": 5.28,
+      "amount": 10.56
+    },
+    {
+      "description": "Safety goggles, anti-fog",
+      "quantity": 8,
+      "unit_price": 4.93,
+      "amount": 39.44
+    },
+    {
+      "description": "Nitrile gloves, size M, box of 100",
+      "quantity": 20,
+      "unit_price": 14.66,
+      "amount": 293.2
+    },
+    {
+      "description": "M8 hex bolts, zinc plated, bag of 100",
+      "quantity": 8,
+      "unit_price": 16.12,
+      "amount": 128.96
+    }
+  ],
+  "subtotal": 15653.49,
+  "tax": 1878.42,
+  "total": 17531.91
+}

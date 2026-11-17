@@ -1,0 +1,40 @@
+{
+  "file": "inv-009-classic-scan.png",
+  "document_type": "invoice",
+  "vendor_name": "Driftwood Furniture Makers",
+  "buyer_name": "Example Robotics Ltd",
+  "number": "INV-2026-0009",
+  "issue_date": "2026-02-01",
+  "due_date": "2026-02-22",
+  "delivery_date": null,
+  "currency": "USD",
+  "line_items": [
+    {
+      "description": "Bookshelf, 5 tiers, walnut finish",
+      "quantity": 3,
+      "unit_price": 192.04,
+      "amount": 576.12
+    },
+    {
+      "description": "Pipette tips 200 ul, rack of 96",
+      "quantity": 6,
+      "unit_price": 6.38,
+      "amount": 38.28
+    },
+    {
+      "description": "Stainless steel bracket, 120 mm",
+      "quantity": 2,
+      "unit_price": 2.92,
+      "amount": 5.84
+    },
+    {
+      "description": "USB-C cable 1 m",
+      "quantity": 2,
+      "unit_price": 6.25,
+      "amount": 12.5
+    }
+  ],
+  "subtotal": 632.74,
+  "tax": 52.2,
+  "total": 684.94
+}

@@ -1,0 +1,52 @@
+{
+  "file": "po-016-compact.pdf",
+  "document_type": "purchase_order",
+  "vendor_name": "Quarry Lane Fabrication Ltd",
+  "buyer_name": "Acme-Free Bakery Co-op",
+  "number": "PO66225",
+  "issue_date": "2026-01-12",
+  "due_date": null,
+  "delivery_date": "2026-02-02",
+  "currency": "INR",
+  "line_items": [
+    {
+      "description": "Window cleaning, per floor",
+      "quantity": 12,
+      "unit_price": 87.78,
+      "amount": 1053.36
+    },
+    {
+      "description": "Deep cleaning, per hour",
+      "quantity": 7.5,
+      "unit_price": 25.09,
+      "amount": 188.18
+    },
+    {
+      "description": "M8 hex bolts, zinc plated, bag of 100",
+      "quantity": 2,
+      "unit_price": 17.78,
+      "amount": 35.56
+    },
+    {
+      "description": "Ballpoint pens, blue, pack of 50",
+      "quantity": 20,
+      "unit_price": 12.42,
+      "amount": 248.4
+    },
+    {
+      "description": "Safety goggles, anti-fog",
+      "quantity": 1,
+      "unit_price": 9.66,
+      "amount": 9.66
+    },
+    {
+      "description": "Safety goggles, anti-fog",
+      "quantity": 10,
+      "unit_price": 7.12,
+      "amount": 71.2
+    }
+  ],
+  "subtotal": 1606.36,
+  "tax": 289.14,
+  "total": 1895.5
+}

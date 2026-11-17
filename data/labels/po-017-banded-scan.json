@@ -1,0 +1,34 @@
+{
+  "file": "po-017-banded-scan.png",
+  "document_type": "purchase_order",
+  "vendor_name": "Quarry Lane Fabrication Ltd",
+  "buyer_name": "Acme-Free Bakery Co-op",
+  "number": "PO19983",
+  "issue_date": "2026-04-25",
+  "due_date": null,
+  "delivery_date": "2026-06-09",
+  "currency": "USD",
+  "line_items": [
+    {
+      "description": "Ceramic capacitor kit, 300 pcs",
+      "quantity": 2,
+      "unit_price": 20.62,
+      "amount": 41.24
+    },
+    {
+      "description": "A4 copier paper, 80gsm, box of 5 reams",
+      "quantity": 5,
+      "unit_price": 25.08,
+      "amount": 125.4
+    },
+    {
+      "description": "Pipette tips 200 ul, rack of 96",
+      "quantity": 1,
+      "unit_price": 8.98,
+      "amount": 8.98
+    }
+  ],
+  "subtotal": 175.62,
+  "tax": 14.49,
+  "total": 190.11
+}

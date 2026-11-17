@@ -1,0 +1,46 @@
+{
+  "file": "po-018-classic-scan.png",
+  "document_type": "purchase_order",
+  "vendor_name": "Copperleaf Catering Services",
+  "buyer_name": "Fictional Harbour Clinic",
+  "number": "PO91276",
+  "issue_date": "2026-02-10",
+  "due_date": null,
+  "delivery_date": "2026-02-24",
+  "currency": "USD",
+  "line_items": [
+    {
+      "description": "Oak desk, 140 x 70 cm",
+      "quantity": 20,
+      "unit_price": 293.74,
+      "amount": 5874.8
+    },
+    {
+      "description": "Aluminium sheet 1 mm, 1 x 2 m",
+      "quantity": 3,
+      "unit_price": 52.71,
+      "amount": 158.13
+    },
+    {
+      "description": "Window cleaning, per floor",
+      "quantity": 3,
+      "unit_price": 107.82,
+      "amount": 323.46
+    },
+    {
+      "description": "Welding wire spool 0.8 mm, 5 kg",
+      "quantity": 3,
+      "unit_price": 55.6,
+      "amount": 166.8
+    },
+    {
+      "description": "Pipette tips 200 ul, rack of 96",
+      "quantity": 5,
+      "unit_price": 9.77,
+      "amount": 48.85
+    }
+  ],
+  "subtotal": 6572.04,
+  "tax": 476.47,
+  "total": 7048.51
+}

@@ -1,0 +1,196 @@
+{
+  "file": "inv-007-classic-multipage.pdf",
+  "document_type": "invoice",
+  "vendor_name": "Pinecone Cleaning Collective",
+  "buyer_name": "Acme-Free Bakery Co-op",
+  "number": "372/INV/26",
+  "issue_date": "2026-01-24",
+  "due_date": "2026-03-10",
+  "delivery_date": null,
+  "currency": "GBP",
+  "line_items": [
+    {
+      "description": "Ceramic capacitor kit, 300 pcs",
+      "quantity": 6,
+      "unit_price": 12.4,
+      "amount": 74.4
+    },
+    {
+      "description": "USB-C cable 1 m",
+      "quantity": 2,
+      "unit_price": 4.33,
+      "amount": 8.66
+    },
+    {
+      "description": "Shipping cartons, 40 x 30 x 30 cm, bundle of 25",
+      "quantity": 20,
+      "unit_price": 27.65,
+      "amount": 553.0
+    },
+    {
+      "description": "On-site installation, per hour",
+      "quantity": 6,
+      "unit_price": 84.42,
+      "amount": 506.52
+    },
+    {
+      "description": "Pipette tips 200 ul, rack of 96",
+      "quantity": 2,
+      "unit_price": 9.95,
+      "amount": 19.9
+    },
+    {
+      "description": "Lunch buffet per person",
+      "quantity": 8,
+      "unit_price": 22.79,
+      "amount": 182.32
+    },
+    {
+      "description": "Microcontroller dev board",
+      "quantity": 3,
+      "unit_price": 23.16,
+      "amount": 69.48
+    },
+    {
+      "description": "M8 hex bolts, zinc plated, bag of 100",
+      "quantity": 1,
+      "unit_price": 20.01,
+      "amount": 20.01
+    },
+    {
+      "description": "USB-C cable 1 m",
+      "quantity": 8,
+      "unit_price": 3.71,
+      "amount": 29.68
+    },
+    {
+      "description": "Bookshelf, 5 tiers, walnut finish",
+      "quantity": 20,
+      "unit_price": 167.66,
+      "amount": 3353.2
+    },
+    {
+      "description": "Task chair with lumbar support",
+      "quantity": 12,
+      "unit_price": 244.45,
+      "amount": 2933.4
+    },
+    {
+      "description": "On-site installation, per hour",
+      "quantity": 4,
+      "unit_price": 92.08,
+      "amount": 368.32
+    },
+    {
+      "description": "USB-C cable 1 m",
+      "quantity": 2,
+      "unit_price": 8.49,
+      "amount": 16.98
+    },
+    {
+      "description": "A4 copier paper, 80gsm, box of 5 reams",
+      "quantity": 5,
+      "unit_price": 38.06,
+      "amount": 190.3
+    },
+    {
+      "description": "Laser toner cartridge, black",
+      "quantity": 5,
+      "unit_price": 45.94,
+      "amount": 229.7
+    },
+    {
+      "description": "Pipette tips 200 ul, rack of 96",
+      "quantity": 3,
+      "unit_price": 9.29,
+      "amount": 27.87
+    },
+    {
+      "description": "A4 copier paper, 80gsm, box of 5 reams",
+      "quantity": 5,
+      "unit_price": 19.15,
+      "amount": 95.75
+    },
+    {
+      "description": "Nitrile gloves, size M, box of 100",
+      "quantity": 4,
+      "unit_price": 11.57,
+      "amount": 46.28
+    },
+    {
+      "description": "Pipette tips 200 ul, rack of 96",
+      "quantity": 5,
+      "unit_price": 8.87,
+      "amount": 44.35
+    },
+    {
+      "description": "Microcontroller dev board",
+      "quantity": 2,
+      "unit_price": 29.04,
+      "amount": 58.08
+    },
+    {
+      "description": "Bookshelf, 5 tiers, walnut finish",
+      "quantity": 5,
+      "unit_price": 149.03,
+      "amount": 745.15
+    },
+    {
+      "description": "A4 copier paper, 80gsm, box of 5 reams",
+      "quantity": 2,
+      "unit_price": 33.99,
+      "amount": 67.98
+    },
+    {
+      "description": "A4 copier paper, 80gsm, box of 5 reams",
+      "quantity": 3,
+      "unit_price": 41.18,
+      "amount": 123.54
+    },
+    {
+      "description": "USB-C cable 1 m",
+      "quantity": 6,
+      "unit_price": 5.89,
+      "amount": 35.34
+    },
+    {
+      "description": "Lunch buffet per person",
+      "quantity": 5,
+      "unit_price": 13.28,
+      "amount": 66.4
+    },
+    {
+      "description": "Microcontroller dev board",
+      "quantity": 2,
+      "unit_price": 15.94,
+      "amount": 31.88
+    },
+    {
+      "description": "Whiteboard markers, assorted, pack of 12",
+      "quantity": 4,
+      "unit_price": 13.8,
+      "amount": 55.2
+    },
+    {
+      "description": "Lunch buffet per person",
+      "quantity": 25,
+      "unit_price": 18.74,
+      "amount": 468.5
+    },
+    {
+      "description": "Welding wire spool 0.8 mm, 5 kg",
+      "quantity": 20,
+      "unit_price": 34.21,
+      "amount": 684.2
+    },
+    {
+      "description": "Ceramic capacitor kit, 300 pcs",
+      "quantity": 8,
+      "unit_price": 19.92,
+      "amount": 159.36
+    }
+  ],
+  "subtotal": 11265.75,
+  "tax": 2253.15,
+  "total": 13518.9
+}

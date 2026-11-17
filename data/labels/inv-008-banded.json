@@ -1,0 +1,40 @@
+{
+  "file": "inv-008-banded.pdf",
+  "document_type": "invoice",
+  "vendor_name": "Pinecone Cleaning Collective",
+  "buyer_name": "Sample Valley School District",
+  "number": "INV53416",
+  "issue_date": "2026-01-05",
+  "due_date": "2026-01-26",
+  "delivery_date": null,
+  "currency": "USD",
+  "line_items": [
+    {
+      "description": "Window cleaning, per floor",
+      "quantity": 8,
+      "unit_price": 82.05,
+      "amount": 656.4
+    },
+    {
+      "description": "Welding wire spool 0.8 mm, 5 kg",
+      "quantity": 25,
+      "unit_price": 56.76,
+      "amount": 1419.0
+    },
+    {
+      "description": "Ceramic capacitor kit, 300 pcs",
+      "quantity": 25,
+      "unit_price": 19.49,
+      "amount": 487.25
+    },
+    {
+      "description": "Ballpoint pens, blue, pack of 50",
+      "quantity": 8,
+      "unit_price": 10.2,
+      "amount": 81.6
+    }
+  ],
+  "subtotal": 2644.25,
+  "tax": 0.0,
+  "total": 2644.25
+}

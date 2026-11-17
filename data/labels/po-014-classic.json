@@ -1,0 +1,28 @@
+{
+  "file": "po-014-classic.pdf",
+  "document_type": "purchase_order",
+  "vendor_name": "Quarry Lane Fabrication Ltd",
+  "buyer_name": "Fictional Harbour Clinic",
+  "number": "PO67645",
+  "issue_date": "2026-04-17",
+  "due_date": null,
+  "delivery_date": "2026-06-01",
+  "currency": "INR",
+  "line_items": [
+    {
+      "description": "Microcontroller dev board",
+      "quantity": 20,
+      "unit_price": 20.73,
+      "amount": 414.6
+    },
+    {
+      "description": "Glass beakers 250 ml, set of 6",
+      "quantity": 10,
+      "unit_price": 34.08,
+      "amount": 340.8
+    }
+  ],
+  "subtotal": 755.4,
+  "tax": 135.97,
+  "total": 891.37
+}

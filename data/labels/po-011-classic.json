@@ -1,0 +1,40 @@
+{
+  "file": "po-011-classic.pdf",
+  "document_type": "purchase_order",
+  "vendor_name": "Pinecone Cleaning Collective",
+  "buyer_name": "Example Robotics Ltd",
+  "number": "564/PO/26",
+  "issue_date": "2026-02-12",
+  "due_date": null,
+  "delivery_date": "2026-03-05",
+  "currency": "GBP",
+  "line_items": [
+    {
+      "description": "Ballpoint pens, blue, pack of 50",
+      "quantity": 8,
+      "unit_price": 10.87,
+      "amount": 86.96
+    },
+    {
+      "description": "Glass beakers 250 ml, set of 6",
+      "quantity": 4,
+      "unit_price": 19.64,
+      "amount": 78.56
+    },
+    {
+      "description": "Lunch buffet per person",
+      "quantity": 2,
+      "unit_price": 19.96,
+      "amount": 39.92
+    },
+    {
+      "description": "Microcontroller dev board",
+      "quantity": 1,
+      "unit_price": 13.11,
+      "amount": 13.11
+    }
+  ],
+  "subtotal": 218.55,
+  "tax": 43.71,
+  "total": 262.26
+}

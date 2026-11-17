@@ -1,0 +1,52 @@
+{
+  "file": "inv-004-classic.pdf",
+  "document_type": "invoice",
+  "vendor_name": "Driftwood Furniture Makers",
+  "buyer_name": "Imaginary Rail Museum Trust",
+  "number": "INV-2026-0004",
+  "issue_date": "2026-04-30",
+  "due_date": "2026-05-30",
+  "delivery_date": null,
+  "currency": "USD",
+  "line_items": [
+    {
+      "description": "Coffee and tea service per person",
+      "quantity": 3,
+      "unit_price": 4.47,
+      "amount": 13.41
+    },
+    {
+      "description": "Shipping cartons, 40 x 30 x 30 cm, bundle of 25",
+      "quantity": 12,
+      "unit_price": 23.47,
+      "amount": 281.64
+    },
+    {
+      "description": "Whiteboard markers, assorted, pack of 12",
+      "quantity": 2,
+      "unit_price": 11.57,
+      "amount": 23.14
+    },
+    {
+      "description": "Glass beakers 250 ml, set of 6",
+      "quantity": 5,
+      "unit_price": 19.66,
+      "amount": 98.3
+    },
+    {
+      "description": "On-site installation, per hour",
+      "quantity": 2.5,
+      "unit_price": 54.02,
+      "amount": 135.05
+    },
+    {
+      "description": "Bookshelf, 5 tiers, walnut finish",
+      "quantity": 5,
+      "unit_price": 298.82,
+      "amount": 1494.1
+    }
+  ],
+  "subtotal": 2045.64,
+  "tax": 0.0,
+  "total": 2045.64
+}
