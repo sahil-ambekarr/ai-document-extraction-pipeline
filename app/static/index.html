@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document Extraction</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>Document Extraction</h1>
+    <span id="health" class="pill muted">checking…</span>
+    <a class="right" href="/docs">API docs</a>
+  </header>
+
+  <main>
+    <section class="card">
+      <form id="upload-form">
+        <label class="file">
+          <span>Invoice or purchase order (PDF, PNG, JPEG)</span>
+          <input id="file" name="file" type="file" accept=".pdf,.png,.jpg,.jpeg" required>
+        </label>
+        <label>
+          <span>Mode</span>
+          <select id="mode" name="mode">
+            <option value="">server default</option>
+            <option value="auto">auto</option>
+            <option value="text">text (PDF text layer)</option>
+            <option value="vision">vision (page image)</option>
+          </select>
+        </label>
+        <label>
+          <span>Type hint</span>
+          <select id="doc_type" name="doc_type">
+            <option value="">let the model decide</option>
+            <option value="invoice">invoice</option>
+            <option value="purchase_order">purchase order</option>
+          </select>
+        </label>
+        <button id="submit" type="submit">Extract</button>
+        <span id="progress" class="muted"></span>
+      </form>
+    </section>
+
+    <section id="result" class="card hidden">
+      <div class="result-head">
+        <h2 id="result-title">Result</h2>
+        <span id="status" class="pill"></span>
+        <span id="meta" class="muted"></span>
+        <a id="download-one" class="button right" href="#">Download Excel</a>
+      </div>
+      <div class="split">
+        <div id="pages" class="pages"></div>
+        <div class="json-col">
+          <div id="errors" class="errors hidden"></div>
+          <div id="attempts" class="attempts"></div>
+          <pre id="json"></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="result-head">
+        <h2>Stored documents</h2>
+        <a class="button right" href="/export.xlsx">Download all (Excel)</a>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th><th>File</th><th>Type</th><th>Number</th><th>Vendor</th>
+            <th class="num">Total</th><th>Status</th><th>Retries</th><th>Mode / model</th>
+            <th class="num">Latency</th>
+          </tr>
+        </thead>
+        <tbody id="doc-rows"><tr><td colspan="10" class="muted">Loading…</td></tr></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
