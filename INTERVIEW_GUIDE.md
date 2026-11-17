@@ -50,19 +50,23 @@ the failing field and the numbers involved, which gives the model something to f
 loop keeps the last parseable answer, marked invalid, so a person can review it.
 
 **Did the retry actually help?**
-Answer from `docs/eval-results.md`: the per-document table shows retries and whether
-the final answer was valid. On CPU each retry of a multi-page document costs minutes,
-and some documents stay invalid after 3 attempts, so it helps on some, not all.
+In the llama3.2 text run, 2 of 7 documents failed validation on the first attempt and
+passed on the second (`inv-007`, `po-013`). It does not always work: in an earlier,
+interrupted run the two-page `inv-005` was still invalid after 3 attempts (685 s). On
+CPU each retry of a long document costs minutes.
 
 **What do the eval numbers mean, and their limits?**
-Field accuracy compares 10 header fields after normalisation (amounts within 0.01);
-line items use one-to-one matching and F1. The documents are synthetic and the subsets
-are small (8 text, 5 vision), so one document moves a figure by 10-20 points. They show
-how the pipeline handles these layouts, not real-world accuracy.
+llama3.2 text, 7 docs: 97.1% field accuracy, 91.7% line-item F1, 7 of 7 schema-valid,
+106 s mean. qwen2.5vl:3b vision, 2 scans: 100%, 211 s mean. Field accuracy compares
+10 header fields (amounts within 0.01); line items use one-to-one matching and F1.
+The documents are synthetic and the subsets are small, so one document moves a figure
+by 14 to 50 points, and the two-page documents were not in the text subset.
 
 **Why is schema-valid not the same as correct?**
 A document can satisfy every rule and still swap vendor and buyer or misread a date.
-That is why field accuracy is scored separately from the schema-valid rate.
+Real example: on `inv-007` llama3.2 returned 22 of 30 lines with a subtotal and total
+that add up for those 22, so it passed validation and was still wrong. That is why
+field accuracy is scored separately from the schema-valid rate.
 
 **Why both text and vision modes?**
 Text mode gives the model exact characters and is faster on CPU. Scans have no text
