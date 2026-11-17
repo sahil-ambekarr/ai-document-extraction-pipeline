@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      # No API key, no GPU, no Ollama: the mock provider replays recordings.
+      LLM_PROVIDER: mock
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          cache: pip
+          cache-dependency-path: requirements*.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Lint
+        run: ruff check .
+
+      - name: Tests
+        run: pytest
+
+      - name: Eval metrics replay (mock provider, recorded llama3.2 outputs)
+        run: python scripts/eval.py --provider mock --mode text --max-attempts 3 --no-report --results-dir "$RUNNER_TEMP/eval"

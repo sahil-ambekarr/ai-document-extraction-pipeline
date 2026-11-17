@@ -1,5 +1,5 @@
 -r requirements.txt
-pytest>=8.0
-ruff>=0.6
-reportlab>=4.2
-playwright>=1.45
+pytest>=9.0
+ruff>=0.17
+reportlab>=5.1
+playwright>=1.65

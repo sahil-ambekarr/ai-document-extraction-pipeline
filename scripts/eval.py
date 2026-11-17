@@ -37,7 +37,7 @@ from app.rendering import render_document  # noqa: E402
 
 SAMPLES = REPO_ROOT / "data" / "samples"
 LABELS = REPO_ROOT / "data" / "labels"
-RESULTS = REPO_ROOT / "eval" / "results"
+DEFAULT_RESULTS = REPO_ROOT / "eval" / "results"
 REPORT = REPO_ROOT / "docs" / "eval-results.md"
 HARDWARE = "CPU-only laptop, AMD integrated graphics (unused by Ollama), 16 GB RAM, Windows 11"
 
@@ -68,7 +68,7 @@ def record_mock(sha256: str, mode: str, outputs: list[str], source: str) -> None
     path.write_text(json.dumps(recording, indent=2) + "\n", encoding="utf-8", newline="\n")
 
 
-def evaluate(args: argparse.Namespace) -> Path:
+def evaluate(args: argparse.Namespace, results_dir: Path) -> Path:
     os.environ["LLM_PROVIDER"] = args.provider
     settings = get_settings()
     provider = build_provider(settings)
@@ -149,10 +149,11 @@ def evaluate(args: argparse.Namespace) -> Path:
         "summary": summary,
         "documents": documents,
     }
-    RESULTS.mkdir(parents=True, exist_ok=True)
-    path = RESULTS / f"{args.provider}_{_slug(model)}_{args.mode}.json"
+    results_dir.mkdir(parents=True, exist_ok=True)
+    path = results_dir / f"{args.provider}_{_slug(model)}_{args.mode}.json"
     path.write_text(json.dumps(output, indent=2) + "\n", encoding="utf-8", newline="\n")
-    print(f"wrote {path.relative_to(REPO_ROOT)}")
+    print(f"wrote {path}")
+    print(json.dumps({k: v for k, v in summary.items() if k != "per_field_accuracy"}, indent=2))
     return path
 
 
@@ -160,8 +161,9 @@ def _pct(value: float) -> str:
     return f"{value * 100:.1f}%"
 
 
-def write_report() -> None:
-    runs = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(RESULTS.glob("*.json"))]
+def write_report(results_dir: Path) -> None:
+    runs = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(results_dir.glob("*.json"))
+            if not p.name.startswith("mock_")]  # mock runs replay recordings, not a model
     lines = [
         "# Evaluation results",
         "",
@@ -236,13 +238,17 @@ def main() -> None:
     parser.add_argument("--max-attempts", type=int, default=3)
     parser.add_argument("--record", action="store_true",
                         help="Save raw outputs to data/mock_responses/ for the mock provider")
+    parser.add_argument("--results-dir", type=Path, default=DEFAULT_RESULTS)
     parser.add_argument("--report-only", action="store_true")
+    parser.add_argument("--no-report", action="store_true",
+                        help="Do not regenerate docs/eval-results.md")
     args = parser.parse_args()
     if not args.report_only:
         started = time.perf_counter()
-        evaluate(args)
+        evaluate(args, args.results_dir)
         print(f"total wall time {time.perf_counter() - started:.0f}s")
-    write_report()
+    if not args.no_report:
+        write_report(args.results_dir)
 
 
 if __name__ == "__main__":
